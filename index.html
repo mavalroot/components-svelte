@@ -1,26 +1,29 @@
-<!-- index.html -->
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Svelte + TS + Vite App</title>
+    <title>Web components - Demo</title>
   </head>
   <body style="padding: 10px;">
+    <h1>Icons</h1>
+    <my-icon icon="plus" fill="red" size="50"></my-icon>
+    <my-icon icon="delete" fill="green" size="30"></my-icon>
+
+    <h1>Buttons</h1>
     <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 5px">
-      <my-button color="primary">Button</my-button>
-      <my-button color="accent">Button</my-button>
-      <my-button color="warn">Button</my-button>
+      <my-button color="primary">Primary</my-button>
+      <my-button color="accent">Accent</my-button>
+      <my-button color="warn">Warn</my-button>
       <my-button color="warn" disabled>Disabled</my-button>
-      <my-button color="primary" fill="rounded">Button</my-button>
-      <my-button color="accent" fill="rounded">Button</my-button>
-      <my-button color="warn" fill="rounded">Button</my-button>
+      <my-button color="primary" fill="rounded">Primary</my-button>
+      <my-button color="accent" fill="rounded">Accent</my-button>
+      <my-button color="warn" fill="rounded">Warn</my-button>
       <my-button color="warn" fill="rounded" disabled>Disabled</my-button>
-      <my-button color="primary" fill="outlined">Button</my-button>
-      <my-button color="accent" fill="outlined">Button</my-button>
-      <my-button color="warn" fill="outlined">Button</my-button>
+      <my-button color="primary" fill="outlined">Primary</my-button>
+      <my-button color="accent" fill="outlined">Accent</my-button>
+      <my-button color="warn" fill="outlined">Warn</my-button>
       <my-button color="warn" fill="outlined" disabled>Disabled</my-button>
     </div>
 
