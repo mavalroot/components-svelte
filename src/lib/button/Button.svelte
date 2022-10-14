@@ -1,7 +1,8 @@
 <svelte:options tag="my-button" />
 
 <script lang="ts">
-  import '../style/tailwind.css';
+  import '../../shared/style/tailwind.css';
+
   import { createEventDispatcher } from 'svelte';
 
   import {
@@ -9,15 +10,13 @@
     ButtonSizeEnum,
     type Button,
     type ButtonSize,
-  } from '../models/button';
-  import { ColorEnum, type Color } from '../models/color';
+  } from '$shared/models/button';
+  import { ColorEnum, type Color } from '$shared/models/color';
 
   export let color: Color = ColorEnum.PRIMARY;
   export let size: ButtonSize = ButtonSizeEnum.MEDIUM;
   export let disabled: boolean = false;
   export let fill: Button = ButtonEnum.SIMPLE;
-
-  console.log(disabled);
 
   const dispatch = createEventDispatcher();
 

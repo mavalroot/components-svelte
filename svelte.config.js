@@ -1,4 +1,4 @@
-import preprocess from 'svelte-preprocess'
+import preprocess from 'svelte-preprocess';
 
 export default {
   // Consult https://github.com/sveltejs/svelte-preprocess
@@ -7,6 +7,6 @@ export default {
     postcss: true,
   }),
   compilerOptions: {
-    customElement: true
-  }
-}
+    customElement: true,
+  },
+};
