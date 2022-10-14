@@ -1,9 +1,10 @@
-export type Button = 'simple' | 'rounded' | 'outlined';
+export type Button = 'simple' | 'flat' | 'outlined' | 'raised';
 
 export enum ButtonEnum {
 	SIMPLE = 'simple',
-	ROUNDED = 'rounded',
-	OUTLINED = 'outlined'
+	FLAT = 'flat',
+	OUTLINED = 'outlined',
+	RAISED = 'raised'
 }
 
 export type ButtonSize ='md' | 'bg' | 'sm';

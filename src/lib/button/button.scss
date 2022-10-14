@@ -5,7 +5,23 @@
 .btn {
   font-family: var(--font-family, sans-serif);
 
-  @apply border-none py-1 px-4 font-semibold cursor-pointer;
+  @apply rounded transition-all relative overflow-hidden border-none py-1 px-4 font-semibold cursor-pointer;
+
+  &:after {
+    content: '';
+    background-color: rgba(255, 255, 255, 0.3);
+    animation: ripple 2s;
+
+    @apply hidden absolute rounded-full w-28 h-28 -mt-14 -ml-14 top-2/4 left-2/4 opacity-0;
+  }
+
+  &:focus:not(:active)::after {
+    @apply block;
+  }
+
+  &:active {
+    @apply scale-95;
+  }
 
   &.btn-bg {
     @apply text-xl;
@@ -20,21 +36,15 @@
   }
 
   &.disabled {
+    background-color: #0000001f;
+    color: #00000042;
     @apply pointer-events-none cursor-not-allowed;
   }
 }
 
-.btn-simple {
-  @apply rounded;
-}
-
-.btn-rounded {
-  @apply rounded-full;
-}
-
 .btn-outlined {
   border: 1px solid;
-  @apply bg-transparent rounded;
+  @apply bg-transparent;
 
   &.btn-primary {
     border-color: var(--primary, #3f51b5);
@@ -71,11 +81,13 @@
   &.disabled {
     border-color: #0000001f;
     color: #00000042;
+
+    @apply bg-transparent;
   }
 }
 
-.btn-simple,
-.btn-rounded {
+.btn-flat,
+.btn-raised {
   @apply border-none;
 
   &:not(.disabled):hover {
@@ -100,5 +112,20 @@
   &.disabled {
     background-color: #0000001f;
     color: #00000042;
+  }
+}
+
+.btn-raised {
+  box-shadow: 0 3px 1px -2px #0003,0 2px 2px #00000024,0 1px 5px #0000001f;
+}
+
+@keyframes ripple {
+  from {
+    opacity: 1;
+    transform: scale(0);
+  }
+  to {
+    opacity: 0;
+    transform: scale(10);
   }
 }
