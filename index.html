@@ -5,8 +5,33 @@
     <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Web components - Demo</title>
+    <script src="//unpkg.com/redefine-custom-elements@0.1.2/lib/index.js"></script>
+    <script>
+      const _define = customElements.define;
+      customElements.define = function (name, CustomElement, options) {
+        const nativeDef = _define.bind(customElements);
+        nativeDef(name, CustomElement, options);
+
+        // re-render the impacted elements
+        setTimeout(() => {
+          [...document.querySelectorAll(name)].forEach((el) => {
+            const container = document.createElement('div');
+            container.innerHTML = el.outerHTML;
+            const newNode = container.firstElementChild;
+            el.parentNode.replaceChild(newNode, el);
+          });
+        }, 0);
+      };
+    </script>
   </head>
   <body style="padding: 10px">
+    <div>
+      <my-section>
+        <span slot="header">Header</span>
+        <span slot="content">Content</span>
+        <span slot="footer">Footer</span>
+      </my-section>
+    </div>
     <h1>Icons</h1>
     <my-icon icon="plus" fill="red" size="50"></my-icon>
     <my-icon icon="delete" fill="green" size="30"></my-icon>
