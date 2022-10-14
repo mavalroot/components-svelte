@@ -6,29 +6,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Web components - Demo</title>
   </head>
-  <body style="padding: 10px;">
+  <body style="padding: 10px">
     <h1>Icons</h1>
     <my-icon icon="plus" fill="red" size="50"></my-icon>
     <my-icon icon="delete" fill="green" size="30"></my-icon>
 
     <h1>Buttons</h1>
-    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 5px">
+    <div>
+      <h2>Simple</h2>
       <my-button color="primary">Primary</my-button>
       <my-button color="accent">Accent</my-button>
       <my-button color="warn">Warn</my-button>
       <my-button color="warn" disabled>Disabled</my-button>
+    </div>
+    <div>
+      <h2>Flat</h2>
       <my-button color="primary" fill="flat">Primary</my-button>
       <my-button color="accent" fill="flat">Accent</my-button>
       <my-button color="warn" fill="flat">Warn</my-button>
       <my-button color="warn" fill="flat" disabled>Disabled</my-button>
+    </div>
+    <div>
+      <h2>Outlined</h2>
       <my-button color="primary" fill="outlined">Primary</my-button>
       <my-button color="accent" fill="outlined">Accent</my-button>
       <my-button color="warn" fill="outlined">Warn</my-button>
       <my-button color="warn" fill="outlined" disabled>Disabled</my-button>
+    </div>
+    <div>
+      <h2>Raised</h2>
       <my-button color="primary" fill="raised">Primary</my-button>
       <my-button color="accent" fill="raised">Accent</my-button>
       <my-button color="warn" fill="raised">Warn</my-button>
       <my-button color="warn" fill="raised" disabled>Disabled</my-button>
+    </div>
+
+    <div>
+      <h2>Size</h2>
+      <my-button color="primary" fill="raised" size="sm">Small</my-button>
+      <my-button color="primary" fill="raised" size="md">Medium</my-button>
+      <my-button color="primary" fill="raised" size="bg">Large</my-button>
     </div>
 
     <script type="module" src="/src/main.ts"></script>
